@@ -10,6 +10,7 @@
   --white-contacts-color: rgba(255, 255, 255, 0.6);
   --border-color: rgba(238, 238, 238, 1);
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --button-background-color: #188ce8;
 }
 /*===== smooth scrolling header&footer ====*/
 html {
@@ -85,23 +86,7 @@ body {
 .address-contact-link:focus {
   color: var(--accent-color);
 }
-.hero {
-  max-width: 1600px;
-  background-image: linear-gradient(
-      0deg,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(../images/banner/bg.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #c4c4c4;
 
-  padding-top: 200px;
-  padding-bottom: 200px;
-  margin: 0 auto;
-  text-align: center;
-}
 .header {
   position: sticky;
   top: 0;
@@ -243,14 +228,22 @@ body {
 
 /*============hero=============*/
 .hero {
-  background-color: #2f303a;
+  max-width: 1600px;
+  background-image: linear-gradient(
+      0deg,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/banner/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #c4c4c4;
+
   padding-top: 200px;
   padding-bottom: 200px;
-}
-.hero .container {
+  margin: 0 auto;
   text-align: center;
 }
-
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -490,7 +483,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--body-background-color);
 }
 .pictures-title {
   font-family: inherit;
@@ -512,7 +505,7 @@ body {
   width: calc((100% - 120px) / 4);
   margin-left: 30px;
   margin-top: 30px;
-  background: #ffffff;
+  background: var(--body-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -750,7 +743,7 @@ body {
   line-height: 1.15;
   letter-spacing: 0.03em;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--white-contacts-color);
 }
 
 .subscribe-button {
@@ -783,16 +776,16 @@ body {
 }
 .subscribe-button:hover,
 .subscribe-button:focus {
-  background-color: #188ce8;
+  background-color: var(--button-background-color);
 }
 .subscribe-icon {
   margin-left: 10px;
   width: 24px;
   height: 24px;
 }
-/* =============== footer subscribe form =========== */
+/* =============== end-footer-subscribe-form =========== */
 
-/* ======= modal window ======== */
+/* ======= modal-window ======== */
 .backdrop {
   position: fixed;
   top: 0;
@@ -815,7 +808,7 @@ body {
   width: 528px;
   height: 580px;
 
-  background-color: #ffffff;
+  background-color: var(--body-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -834,10 +827,11 @@ body {
 
   cursor: pointer;
 
-  background: #ffffff;
+  background: var(--body-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
+
 .modal-icon {
   width: 18px;
   height: 18px;
@@ -847,7 +841,8 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
-/* ====== end modal window ===== */
+/* ====== end-modal-window ===== */
+
 /* =============== modal-form ============*/
 .modal-form {
   padding: 40px;
@@ -970,8 +965,9 @@ body {
   margin-bottom: 30px;
 }
 /* =============== end-modal-form ============*/
+
 /* ========== custom-checkbox ================*/
-.modal-custom-checkbox {
+.custom-checkbox {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -981,14 +977,14 @@ body {
   width: 1px !important;
   overflow: hidden;
 }
-/* для элемента label, связанного с .modal-custom-checkbox */
-.modal-custom-checkbox + label {
+/* для элемента <label> связанного с .custom-checkbox */
+.custom-checkbox + label {
   display: inline-flex;
   align-items: center;
   user-select: none;
 }
-/* создание в label псевдоэлемента before со следующими стилями */
-.modal-custom-checkbox + label::before {
+/* создание в <label> псевдоэлемента ::before со следующими стилями */
+.custom-checkbox + label::before {
   content: "";
   display: inline-block;
   margin-right: 8px;
@@ -1007,22 +1003,24 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* стили для checkbox, находящегося в focus и не находящегося в состоянии checked */
-.modal-custom-checkbox:focus:not(:checked) + label::before {
+/* стили для custom-checkbox: находящегося в :focus и не находящегося в состоянии :checked */
+.custom-checkbox:focus:not(:checked) + label::before {
   border-color: var(--accent-color);
 }
-/* стили для checkbox, находящегося в состоянии checked */
-.modal-custom-checkbox:checked + label::before {
+/* стили для custom-checkbox: находящегося в состоянии :checked */
+.custom-checkbox:checked + label::before {
   border-color: #0b76ef;
   background-color: #0b76ef;
-  background-image: url("../images/vector.svg");
+  background-image: url("../images/Vector.svg");
   background-size: contain;
 }
-/* стили для checkbox, находящегося в состоянии disabled */
-.modal-custom-checkbox:disabled + label::before {
+/* стили для custom-checkbox: находящегося в состоянии "disabled" */
+.custom-checkbox:disabled + label::before {
   background-color: #e9ecef;
 }
-/* ========== end custom-checkbox =============*/
+/* ========== end-custom-checkbox =============*/
+
+/*=========== modal-send-button ===============*/
 .modal-text {
   color: var(--text-color);
 }
@@ -1054,5 +1052,6 @@ body {
 }
 .modal-send-button:hover,
 .modal-send-button:focus {
-  background-color: #188ce8;
+  background-color: var(--button-background-color);
 }
+/*=========== end-modal-send-button ============*/
