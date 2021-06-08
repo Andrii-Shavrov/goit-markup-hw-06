@@ -1011,7 +1011,7 @@ body {
 .custom-checkbox:checked + label::before {
   border-color: #0b76ef;
   background-color: #0b76ef;
-  background-image: url("../images/Vector.svg");
+  background-image: url("../images/vector.svg");
   background-size: contain;
 }
 /* стили для custom-checkbox: находящегося в состоянии "disabled" */
